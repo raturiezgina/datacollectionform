@@ -18,8 +18,8 @@ Cal_entry <- tabItem(tabName = 'calibration_entry',
                                                                                               choices = c("","Injection","Machining","QA")),
                                                                            selectInput("info_part_of_cal", label = tagList(icon("hive"), "Measurement Tools"),
                                                                                               choices = c("","Digital Caliper"), selected = "Digital Caliper"),
-                                                                           shinyjs::hidden(
-                                                                                    div(id = "max_range",style = "text-align: center;",
+                                                                           # shinyjs::hidden(
+                                                                           #          div(id = "max_range",style = "text-align: center;",
                                                                                         selectInput("max_measurement_range", label = tagList(icon("hive"), "Measurement Range"),
                                                                                                     choices = c("","150","200","300")),
                                                                                         dateInput('cal_date',label = tagList(icon("calendar-check"), "Calibration Date")),
@@ -29,7 +29,7 @@ Cal_entry <- tabItem(tabName = 'calibration_entry',
                                                                                         numericInput("info_humidity", label = tagList(icon("step-forward"), "Relative Humidity (%)"),value = NULL),
                                                                                         textInput("info_sop", placeholder="Cal Procedure", label = tagList("Calibration Procedure")),
                                                                                         actionButton("create_table","Create Table")
-                                                                            ))
+                                                                            # ))
                                                                    )
                                                                    )
                                                          )
