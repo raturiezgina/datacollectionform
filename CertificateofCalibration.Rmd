@@ -1,0 +1,94 @@
+---
+title: \vspace{-0.5cm} **Certificate of Calibration**
+output: pdf_document
+geometry: "left=1.75cm,right=1.75cm,top=2cm,bottom=1cm"
+papersize: a4
+linestretch: 1
+fontsize: 4pt
+links-as-notes: true
+always_allow_html: true
+header-includes: 
+- \usepackage{booktabs}
+- \usepackage{longtable}
+- \usepackage{graphicx}
+- \usepackage{array}
+- \usepackage{multirow}
+- \usepackage{float}
+- \usepackage{colortbl}
+- \usepackage{pdflscape}
+- \usepackage{tabu}
+- \usepackage{threeparttable}
+- \usepackage{threeparttablex}
+- \usepackage[normalem]{ulem}
+- \usepackage{makecell}
+- \usepackage{fancyhdr}
+- \pagestyle{fancy}
+- \usepackage[yyyymmdd]{datetime}
+- \renewcommand{\dateseparator}{--}
+- \setlength\headheight{0pt}
+- \lhead{\includegraphics[width=7.5cm]{/home/formulatrix/webapps/calibration/www/logo.png}}
+- \rhead{\fontsize{8}{12} \selectfont 8 DeAngelo Drive, Bedford, MA 01730, USA \linebreak Phone +1 781 788-0228 / Fax +1 781 207-5522}
+- \renewcommand{\footrulewidth}{0.4pt}% Default \footrulewidth is 0pt
+- \lfoot{\fontsize{8}{11} \selectfont This is a computer generated report printed on \date{\today}}
+- \pagenumbering{gobble}
+- \fancypagestyle{plain}{\pagestyle{fancy}}
+---
+\vspace{-12truemm}
+```{r echo = F, results='asis'}
+kbl(CoCTableData$df, col.names = NULL, linesep = "", "latex", 
+                booktabs = T, bottomrule = '', toprule = '', midrule = '')
+```
+**Inside Measurement**
+```{r echo = FALSE, results='asis'}
+kbl(CoCTableData$inside,longtable = T, booktabs = T, linesep = "", align = "lllcccc") %>%
+  kable_styling(latex_options = c("repeat_header"),font_size = 8) 
+```
+\vspace{-0.5cm} 
+**Outside Measurement**
+```{r echo = FALSE, results='asis'}
+kbl(CoCTableData$outside,longtable = T, booktabs = T, linesep = "", align = "lllcccc") %>%
+  kable_styling(latex_options = c("repeat_header"),font_size = 8) 
+```
+\vspace{-0.5cm} 
+**Depth Measurement**
+```{r echo = FALSE, results='asis'}
+kbl(CoCTableData$depth,longtable = T, booktabs = T, linesep = "", align = "lllcccc") %>%
+  kable_styling(latex_options = c("repeat_header"),font_size = 8)
+```
+\vspace{-0.5cm} 
+**Step Measurement**
+```{r echo = FALSE, results='asis'}
+kbl(CoCTableData$step,longtable = T, booktabs = T, linesep = "", align = "lllcccc") %>%
+  kable_styling(latex_options = c("repeat_header"),font_size = 8) 
+```
+\vspace{-0.5cm} 
+**Tools Accuracy**
+```{r echo = FALSE, results='asis'}
+kbl(CoCTableData$result_final,longtable = T, booktabs = T, linesep = "", align = "lllcccc") %>%
+  kable_styling(latex_options = c("repeat_header"),font_size = 8) 
+```
+\vspace{-0.5cm} 
+**Notes :**  
+  VoM to Value of Measurement.
+\
+This tool is calibrated using a Block Gauge.
+\
+The edges of the lower jaws are slightly chipped, the deviation mean is up to 0.05 mm.
+\
+<!-- ![sign](/home/formulatrix/webapps/calibration/www/Picture1.png) \ -->
+<!-- \setlength{\parskip}{0.15em} -->
+<!-- \fontsize{8}{10} \selectfont Yodha Pradana             -->
+<!-- \indent\rule{5cm}{0.5pt} -->
+<!-- \fontsize{8}{12} \selectfont Quality Assurance Manager -->
+
+![sign](/home/formulatrix/webapps/calibration/www/eko_sign.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![sign](/home/formulatrix/webapps/calibration/www/Picture1.png) \
+\setlength{\parskip}{0.15em}
+\fontsize{10}{10} \selectfont &nbsp;&nbsp; Eko Priyanto &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+\fontsize{10}{10} \selectfont Yodha Pradana
+
+<!-- \indent\rule{3cm}{0.5pt} \selectfont\rule{5cm}{0.5pt} -->
+\__________ &nbsp;&nbsp; __________________
+
+<!-- \setlength\parindent{10pt}\setlength{\parskip}{0.5pt plus 1.0pt} -->
+\fontsize{10}{10} \selectfont  &nbsp;&nbsp; Calibrator &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+\fontsize{10}{10} \selectfont  Quality Assurance Manager
